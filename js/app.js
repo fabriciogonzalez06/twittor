@@ -1,5 +1,13 @@
-if (navigator.serviceWorker.register('/sw.js')) {
+var url = window.location.href;
+var swLocation = '/twittor/sw.js'
 
+if (navigator.serviceWorker) {
+
+    if (swLocation.includes('localhost')) {
+        swLocation = '/sw.js';
+    }
+
+    navigator.serviceWorker.register(swLocation)
 }
 
 
